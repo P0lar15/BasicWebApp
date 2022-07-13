@@ -30,4 +30,17 @@ class QueryProcessorTest {
 		}
 	}
 
+	@Test
+	void plus() {
+		int expected = 16;
+		int result = 0;
+		try {
+			result = Integer.parseInt(queryProcessor.process("e49a3410: what is 12 plus 4"));
+		}
+		catch (NumberFormatException e) {
+			result = -1;
+		}
+		assertEquals(expected, result);
+	}
+
 }

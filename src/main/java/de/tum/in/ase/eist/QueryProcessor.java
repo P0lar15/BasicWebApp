@@ -51,7 +51,8 @@ public class QueryProcessor {
             catch (NumberFormatException e) {
                 number2 = -1;
             }
-            return "" + number1 + number2;
+            int result = number1 + number2;
+            return "" + result;
         }
         else {
             return "V";
