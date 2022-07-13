@@ -55,7 +55,7 @@ public class QueryProcessor {
             return "" + result;
         }
         else {
-            return "V";
+            return "";
         }
     }
 }
