@@ -14,6 +14,8 @@ public class QueryProcessor {
         } else if (query.contains("name")) {
            return "MyTeam";
         } else if (query.contains("numbers") && query.contains("largest")){ // TODO extend the programm here
+
+            query.indexOf(":");
             String[] temp = query.split(" ");
             int[] integers = new int[temp.length];
             for (int i = 0; i < temp.length; i++) {
@@ -31,6 +33,25 @@ public class QueryProcessor {
                 }
             }
             return "" + highest;
+        }//Received query "e49a3410: what is 12 plus 4"
+        else if (query.contains("what") && query.contains("plus")) {
+            String[] temp = query.split(" plus ");
+            String[] temp2 = temp[0].split(" ");
+            int number1 = -1;
+            try {
+                number1 = Integer.parseInt(temp2[temp2.length-1]);
+            }
+            catch (NumberFormatException e) {
+                number1 = -1;
+            }
+            int number2 = -1;
+            try {
+                number2 = Integer.parseInt(temp[temp.length-1]);
+            }
+            catch (NumberFormatException e) {
+                number2 = -1;
+            }
+            return "" + number1 + number2;
         }
         else {
             return "V";
